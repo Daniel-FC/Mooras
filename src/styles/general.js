@@ -15,7 +15,7 @@ const general = {
 
   //===============================BUTTONS======================================
   txtBoldWhite: {
-    fontSize: metrics.font_large,
+    fontSize: metrics.font_x_small,
     color: colors.white_pattern,
     fontFamily: fonts.bold
   },
@@ -39,7 +39,7 @@ const general = {
     flexDirection: 'row'
   },
   containerOrder_primary: {
-    width: '80%',
+    width: '70%',
   },
   btnSelectOrderType_primary: {
     flexDirection: 'row',
@@ -48,21 +48,22 @@ const general = {
     color: colors.white_pattern,
     fontFamily: fonts.bold,
     fontSize: metrics.font_medium,
-    marginLeft: 5
+    marginLeft: 20
   },
   iconArrowDown_primary: {
     marginTop: 4,
-    marginLeft: 3
+    marginLeft: 5
   },
   filtersContainer_primary: {
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    width: '20%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '30%',
   },
   btnFilters_primary: {
-    marginRight: 2,
-    height: 25,
-    width: 25,
+    marginRight: 7,
+    height: 30,
+    width: 30,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',

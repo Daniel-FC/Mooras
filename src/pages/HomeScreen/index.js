@@ -31,11 +31,11 @@ export default function HomeScreen( { navigation } ) {
         useNativeDriver>
           <TouchableOpacity style={styles.btnCadastrar}
           onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.textBoldWhite}>CADASTRAR</Text>
+            <Text style={styles.txtBoldWhite}>CADASTRAR</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnCadastrado}
           onPress={() => navigation.navigate('Registered')}>
-            <Text style={styles.textBoldWhite}>JÁ SOU CADASTRADO</Text>
+            <Text style={styles.txtBoldWhite}>JÁ SOU CADASTRADO</Text>
           </TouchableOpacity>
         </Animatable.View>
       </View>

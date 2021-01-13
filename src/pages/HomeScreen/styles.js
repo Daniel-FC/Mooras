@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   //=================================BUTTONS====================================
   btnCadastrar: {
     marginTop: margin,
+    fontSize: metrics.font_medium,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 8,
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
   },
   btnCadastrado: {
     marginTop: margin-5,
+    fontSize: metrics.font_medium,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 8,

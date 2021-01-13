@@ -3,7 +3,7 @@ import { View, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, Flat
 import DatePicker from 'react-native-datepicker';
 import { maskAccentuation } from './masks';
 
-/*=======THIS FUNCTION FILTERS TAGS===========================================*/
+/*=====================FILTERS TAGS===========================================*/
 function searchTagCategory(value, inputTag, tagClient) {
   let temp = [];
   let nonSearch = deletedSearchTagCategory(inputTag);
@@ -34,7 +34,7 @@ function searchTagCategory(value, inputTag, tagClient) {
   return temp;
 }
 
-/*=======THIS FUNCTION REMOVES 'SELECTED' TAGS FROM SEARCH====================*/
+/*=====================REMOVES 'SELECTED' TAGS FROM SEARCH====================*/
 function deletedSearchTagCategory(inputTag) {
   let nonSearch = [];
   let tagTemp = '';
@@ -52,7 +52,7 @@ function deletedSearchTagCategory(inputTag) {
   return nonSearch;
 }
 
-/*=======THIS FUNCTION ADD THE TAG IN 'SECTIONS'==============================*/
+/*=====================ADD THE TAG IN 'SECTIONS'==============================*/
 function addTagCategory(value, inputTag) {
   let sum = 0;
   for(let i=0; i<inputTag.length; i++) {

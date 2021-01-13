@@ -47,7 +47,7 @@ export default function RegisterScreen() {
 
         {/*=============================BUTTON===============================*/}
         <TouchableOpacity style={styles.btnUser}>
-          <Text style={styles.textBoldWhite}>Cadastrar</Text>
+          <Text style={styles.txtBoldWhite}>Cadastrar</Text>
         </TouchableOpacity>
       </Animatable.View>
     </KeyboardAvoidingView>

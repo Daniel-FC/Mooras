@@ -2,9 +2,16 @@ import * as React from 'react';
 import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import * as Animatable from  'react-native-animatable';
 
+import AuthContext from '../../contexts/auth';
 import styles from './styles';
 
 export default function RegisteredScreen() {
+  const { signed, signIn } = React.useContext(AuthContext);
+
+  function handleSignIn() {
+    signIn();
+  }
+
   return (
     <KeyboardAvoidingView style={styles.container}>
       {/*=============================LOGO===================================*/}
@@ -38,8 +45,8 @@ export default function RegisteredScreen() {
         </TextInput>
 
         {/*=============================BUTTON===============================*/}
-        <TouchableOpacity style={styles.btnUser}>
-          <Text style={styles.textBoldWhite}>Entrar</Text>
+        <TouchableOpacity style={styles.btnUser} onPress={ handleSignIn }>
+          <Text style={styles.txtBoldWhite}>Entrar</Text>
         </TouchableOpacity>
       </Animatable.View>
     </KeyboardAvoidingView>

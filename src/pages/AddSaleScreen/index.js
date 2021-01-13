@@ -7,15 +7,6 @@ import { Ionicons, FontAwesome, AntDesign, FontAwesome5, Feather } from '@expo/v
 import styles from './styles';
 import { colors, metrics } from '../../styles';
 
-function selectStyleButton(key) {
-  if(key==0){return styles.btnDate}
-  if(key==1){return styles.btnDateSelected}
-}
-function selectStyleTxt(key) {
-  if(key==0){return styles.txtDate}
-  if(key==1){return styles.txtDateSelected}
-}
-
 export default function AddSaleScreen() {
   const [open, setOpen] = React.useState(false);
   const [isSwitchEnabled, setSwitch] = React.useState(false);
@@ -25,6 +16,15 @@ export default function AddSaleScreen() {
       setOpen(true);
     }, [])
   );
+
+  function selectStyleButton(key) {
+    if(key==0){return styles.btnDate}
+    if(key==1){return styles.btnDateSelected}
+  }
+  function selectStyleTxt(key) {
+    if(key==0){return styles.txtDate}
+    if(key==1){return styles.txtDateSelected}
+  }
 
   return (
     <View>

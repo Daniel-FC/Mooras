@@ -4,10 +4,11 @@ const { width, height } = Dimensions.get('window');
 
 const metrics = {
   font_small: 16,
-  font_medium: 18,
-  font_large: 20,
-  font_x_large: 22,
-  font_xx_large: 33,
+  font_x_small: 18,
+  font_medium: 20,
+  font_large: 22,
+  font_x_large: 24,
+  font_xx_large: 34,
 
   sizeIcon: 25,
   height_pattern: height,
