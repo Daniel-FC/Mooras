@@ -6,10 +6,12 @@ import AuthContext from '../../contexts/auth';
 import styles from './styles';
 
 export default function RegisteredScreen() {
-  const { signed, signIn } = React.useContext(AuthContext);
+  const { signIn } = React.useContext(AuthContext);
+  const [inputEmail, setInputEmail] = React.useState('');
+  const [inputPassword, setInputPassword] = React.useState('');
 
   function handleSignIn() {
-    signIn();
+    signIn(inputEmail, inputPassword);
   }
 
   return (
@@ -34,14 +36,17 @@ export default function RegisteredScreen() {
         placeholder="E-mail"
         style={styles.input}
         autoCorrect={false}
-        onChangeText={ () => {} }>
+        value={inputEmail}
+        onChangeText={ (texto) => setInputEmail(texto) }>
         </TextInput>
 
         <TextInput
         placeholder="Senha"
         style={styles.input}
         autoCorrect={false}
-        onChangeText={ () => {} }>
+        secureTextEntry={true}
+        value={inputPassword}
+        onChangeText={ (texto) => setInputPassword(texto)}>
         </TextInput>
 
         {/*=============================BUTTON===============================*/}

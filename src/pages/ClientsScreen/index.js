@@ -8,7 +8,7 @@ import ClientsList from '../../components/ClientsList';
 
 import styles from './styles';
 import { colors, metrics } from '../../styles';
-import { deletedSearchTagCategory, searchTagCategory, addTagCategory, maskPhone, maskCurrency, maskBirth, maskAccentuation } from '../../utils';
+import { deletedSearchTagCategory, searchTagCategory, addTagCategory, maskPhone, maskCurrency, maskBirth } from '../../utils';
 
 export default function ClientsScreen() {
   const [open, setOpen] = React.useState(false);

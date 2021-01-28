@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white_pattern,
     color: colors.black_pattern,
     fontFamily: fonts.regular,
-    fontSize: metrics.font_medium,
+    fontSize: metrics.font_medium
   },
 
   //=================================BUTTONS====================================
