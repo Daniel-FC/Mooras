@@ -5,24 +5,19 @@ import DatePicker from 'react-native-datepicker';
 import { AntDesign, Entypo, Ionicons, FontAwesome, FontAwesome5  } from '@expo/vector-icons';
 
 import ClientsList from '../../components/ClientsList';
+import AuthContext from '../../contexts/auth';
 
 import styles from './styles';
 import { colors, metrics } from '../../styles';
 import { deletedSearchTagCategory, searchTagCategory, addTagCategory, maskPhone, maskCurrency, maskBirth } from '../../utils';
 
 export default function ClientsScreen() {
+  
+  const { clientList, tagList} = React.useContext(AuthContext);
+
   const [open, setOpen] = React.useState(false);
-  const [client, setClient] = React.useState([
-    {key: 'a', name: 'Angelica', value: '50,00', tag: 'Salão Central', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'b', name: 'Bernado', value: '21,50', tag: 'Salão Central', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'c', name: 'Calorta', value: '88,00', tag: 'Detran', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'd', name: 'Daniel', value: '0,00', tag: 'Detran, Família', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'e', name: 'Eugênio', value: '999,00', tag: 'Lanchonete', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'f', name: 'Fatima', value: '60,00', tag: 'Família', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'g', name: 'Gilvan', value: '0,00', tag: 'Família', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-    {key: 'h', name: 'Hosana', value: '0,00', tag: 'Família', phone: '(84) 9 9876-5432', adress:'aaa', birth: '01/01/2000'},
-  ]);
-  const [idClient, setIdClient] = React.useState(0);
+  const [client, setClient] = React.useState(clientList);
+
   const [filterTag, setFilterTag] = React.useState([]);
   const [selectTag, setSelectTag] = React.useState('');
   
@@ -33,18 +28,20 @@ export default function ClientsScreen() {
   const [inputBirth, setInputBirth] = React.useState('');
   const [inputTag, setInputTag] = React.useState('');
 
-  let tagClient = [
-    {key: 'Detran'},
-    {key: 'Fam'},
-    {key: 'Famd'},
-    {key: 'Famígla'},
-    {key: 'Família'},
-    {key: 'Lanchonete'},
-    {key: 'Salão Central'},
-  ];
+  let tagClient = [];
   let nonSearch = [];
 
-  //*=====THIS FUNCTION CREATES A CUSTOMER BY CLICKING THE BUTTON=============*/
+  function fillTag() {
+    for(let i=0; i < tagList.length; i++){
+      const data = {
+        key: tagList[i].name
+      };
+      tagClient.push(data);
+    }
+  };
+  fillTag();
+  
+  //*===================CREATES A CUSTOMER BY CLICKING THE BUTTON=============*/
   function confirmButtonModal() {
     if(inputName === ''){
       Alert.alert(
@@ -71,7 +68,6 @@ export default function ClientsScreen() {
       tag: inputTag
     };
     setClient([...client, data]);
-    setIdClient(idClient+1);
     closeModal()
   }
   function closeModal(){
@@ -84,8 +80,9 @@ export default function ClientsScreen() {
     setInputBirth('');
     setInputTag('');
     setSelectTag('');
+    setFilterTag('');
   }
-  /*=====THIS FUNCTION RENDERS THE 'SELECTED' TAGS============================*/
+  /*===================RENDERS THE 'SELECTED' TAGS============================*/
   function renderTag(inputTag) {
     nonSearch = deletedSearchTagCategory(inputTag);
     if(nonSearch.length==1){
@@ -112,18 +109,18 @@ export default function ClientsScreen() {
     }
   }
 
-  /*=====THIS FUNCTION FILTERS TAGS===========================================*/
+  /*===================FILTERS TAGS===========================================*/
   function searchTag (value) {
     setFilterTag(searchTagCategory(value, inputTag, tagClient));
     setSelectTag(value);
   }
 
-  /*=====THIS FUNCTION REMOVES 'SELECTED' TAGS FROM SEARCH====================*/
+  /*===================REMOVES 'SELECTED' TAGS FROM SEARCH====================*/
   function deletedSearch() {
     nonSearch = deletedSearchTagCategory(inputTag);
   }
 
-  /*=====THIS FUNCTION ADD THE TAG IN 'SECTIONS'==============================*/
+  /*===================ADD THE TAG IN 'SECTIONS'==============================*/
   function addTag(value) {
     setInputTag(addTagCategory(value, inputTag));
     setFilterTag([]);
@@ -131,7 +128,7 @@ export default function ClientsScreen() {
     deletedSearch();
   }
 
-  /*=====THIS FUNCTION EXCLUDES 'SELECTED' TAGS===============================*/
+  /*===================EXCLUDES 'SELECTED' TAGS===============================*/
   function removeTag(value) {
     let control=0;
     let tempInputTag = '';

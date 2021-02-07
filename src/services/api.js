@@ -2,22 +2,18 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { create } from 'apisauce';
 
 const api = create({
-  baseURL: 'http://10.0.2.2:3000',
-  headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-  },
+  baseURL: 'https://api-mooras.herokuapp.com',
 });
 
 api.addAsyncRequestTransform(request => async () => {
-  const token = await AsyncStorage.getItem('@CodeApi:token');
+  const token = await AsyncStorage.getItem('@RNAuth:token');
 
-  if (token)
+  if(token)
     request.headers['Authorization'] = `Bearer ${token}`;
 });
 
-api.addAsyncRequestTransform(response => {
-  if(!response.ok) throw response;
+api.addResponseTransform(response => {
+  if (!response.ok) throw response;
 });
 
 export default api;

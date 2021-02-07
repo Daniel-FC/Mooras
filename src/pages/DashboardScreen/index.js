@@ -11,8 +11,6 @@ export default function DashboardScreen() {
     signOut();
   }
 
-  console.log(user.name);
-
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor='#2D64FD' style="light-content" />

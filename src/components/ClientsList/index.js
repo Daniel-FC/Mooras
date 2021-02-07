@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Modal } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
 
@@ -20,9 +20,17 @@ function selectColor(value, key) {
 }
 
 export default function ClientsList({ data }) {
+  const [open, setOpen] = React.useState(false);
+  
+  function selectTag() {
+    let tag = data.tags[0];
+    if(data.tags.length>1)
+      tag = data.tags[0] + ', ' + data.tags[1];
+    return tag;
+  }
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={ () => setOpen(true)} >
         {/*=============================TOP_ELEMENTS=========================*/}
         <View style={styles.containerElements}>
           <View style={styles.containerNameClient}>
@@ -37,8 +45,8 @@ export default function ClientsList({ data }) {
         {/*=============================BOT_ELEMENTS=========================*/}
         <View style={styles.containerElements}>
           <View style={styles.containerTag}>
-            <AntDesign name="tago" size={20} color={colors.black_pattern} style={styles.iconTag}/>
-            <Text style={styles.txtTagClient}>{data.tag}</Text>
+            <AntDesign name="tag" size={20} color={colors.black_pattern} style={styles.iconTag}/>
+            <Text style={styles.txtTagClient}>{selectTag()}</Text>
           </View>
 
           <View style={styles.containerPin}>
@@ -46,6 +54,11 @@ export default function ClientsList({ data }) {
           </View> 
         </View>
       </TouchableOpacity>
+
+
+      <Modal animationType="slide" transparent={false} visible={open}>
+
+      </Modal>
     </View>
   );
 }
