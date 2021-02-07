@@ -1,31 +1,4 @@
 Relatório de desenvolvimento: https://drive.google.com/file/d/1xsWbppkBKXs1Bb_Tf3e8wc9AMdyZldCd/view?usp=sharing
-Consumidor da API: https://github.com/Daniel-FC/Mooras
+API: https://github.com/Daniel-FC/api-mooras
 
-Iniciar: npm start
-         nodemon app
-
-Heroku: git rm yarn.lock
-
-RETIRAR O SAUCEEEE
-
-
-npm start
-nodemon app
-git init
-git remote add origin https://github.com/Daniel-FC/teste1.git
-git branch -M main
-git status
-git add . 
-git commit -m "first commit"
-git push -u origin main
-git status
-git add . 
-git commit -m "first commit"
-git push
-git branch
-git checkout
-FAZER O OUTRO README
-incluir o relatorio
-git rm yarn.lock
-retirar a dependencia do 'winston'
-npm uninstall --save <Module name>
+Iniciar: expo start
