@@ -1,0 +1,33 @@
+### 🚧 Futuras Atualizações:
+
+- LISTAR MOVIMENTAÇÃO DOS PRODUTOS (NOVO OBJETO)
+- A CADA TRANSAÇÃO CRIAR MOVIMENTAÇÕES E MUDAR A QTD DOS PRODUTOS
+- BOTAO DE ADICIONAR E DECREMENTAR QUANTIDADE PRODUTOS
+- <FontAwesome5 name="exchange-alt" size={24} color="black" />
+- DELETAR MOVIMENTAÇÃO
+- SE EU EDITAR O NOME DO PRODUTO ELE MUDA NAS TRANSAÇÕES?
+- AO EXCLUIR CLIENTE > EXCLUIR TRANSAÇÕES DELE e EXCLUIR MOVIMENTAÇÕES
+- AO EXCLUIR PRODUTOS > EXCLUIR PRODUTO DAS TRANSAÇÕES E  EXCLUIR MOVIMENTAÇÕES
+- AO EXCLUIR TRANSAÇÃO > EXCLUIR MOVIMENTAÇÃO
+- AO EXCLUIR MOVIMENTAÇÃO > EXCLUIR PRODUTO DA TRANSAÇÃO
+- BOTAO DEVE SINCRONIZAR OS EXCLUIDOS
+- LIMITAR NÚMERO DE TRANSAÇÕES / MOVIMENTAÇÕES POR PÁGINA ao invés de descer até o fim do ScrollView OU FAZER QUE O SCROLL DESÇA PRO Y MAXIMO
+- QTD DE PRODUTO E DIVIDA NÃO PODEM SER NEGATIVAS
+
+- Header
+- Card com todas as vendas
+- Card dos aniversários
+- Card dos gráficos | por mês | por data inicial final | por tag | por category | por cliente | por produto
+- Card a qts dias não pagou
+- Documentação e vídeo de funcionamento
+
+
+### 🚧 Primeiro commit:
+
+git init
+git remote add origin https://github.com/Daniel-FC/Mooras
+git branch -M master
+git status
+git add . 
+git commit -m "Add files via upload"
+git push -u origin master
