@@ -13,6 +13,8 @@
 - BOTAO DEVE SINCRONIZAR OS EXCLUIDOS
 - LIMITAR NÚMERO DE TRANSAÇÕES / MOVIMENTAÇÕES POR PÁGINA ao invés de descer até o fim do ScrollView OU FAZER QUE O SCROLL DESÇA PRO Y MAXIMO
 - QTD DE PRODUTO E DIVIDA NÃO PODEM SER NEGATIVAS
+- N deixar o valor ser negativo
+- ao cadastrar nova venda verificar nome de clientes e produtos parecidos.
 
 - Header
 - Card com todas as vendas
